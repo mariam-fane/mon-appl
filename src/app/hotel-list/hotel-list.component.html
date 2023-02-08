@@ -1,0 +1,41 @@
+
+<div class="container">
+<h2 *ngIf="hotels && hotels.length">{{title}}</h2>
+
+<button class="btn btn-primary d-flex" (click)="toggleIsNewBadge()">
+  <span class="material-icons">
+    {{showBadge ? 'visibility_off' : 'visibility'}}
+  </span>
+  <span class="ml-2">{{showBadge ? 'Cachez' : 'afficher'}}</span>Nouveau</button>
+  <hr>
+  <div class="my-2">
+    <div class="row">
+      <div class="col-md-4">
+        <span>Filtre actuel: </span>
+        <b>{{hotelFilter}}</b>
+      </div>
+      <div class="col-md-8 form-group">
+        <!-- avec event buiding data buiding = les donnees sont a la fois ecrites et a la lu automatiquement et les modifications sont auto  -->
+        <input type="text" class="form-control" [(ngModel)] = 'hotelFilter'>
+
+        <!-- <input type="text" class="form-control" [ngModel] = 'hotelFilter' (ngModelChange)="hotelFilter = $event">  -->
+      </div>
+    </div>
+  </div>
+<!-- for in et for of, for in fait iteration au propriete d'un objet et pas sur l'objet en lui meme
+et pourtant le for of returne l'objet concernee -->
+<div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-4" *ngFor="let hotel of hotels">
+  <div class="card">
+         <!-- passer de crocher au parametre  -->
+
+    <img [src]="hotel.imageUrl"[title]="hotel.hotelName" class="card-img-top" [alt]="hotel.hotelName">
+    <div class="card-body">
+      <h5 class="card-title">{{hotel.hotelName}}</h5>
+      <p class="card-text">{{hotel.description}}</p>
+
+      <span class="badge bg-pill bg-info" *ngIf="showBadge">Nouveau</span>
+    </div>
+  </div>
+  </div>
+</div>

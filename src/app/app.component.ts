@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { style } from "@angular/animations";
+import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl:'./app.component.html',
+  styleUrls: []
 })
-export class AppComponent {
-  title = 'mon-appl';
+export class AppCompement {
+  title = 'Gestionnaire hotel';
 }
