@@ -45,7 +45,7 @@ export class HotelListComponent implements OnInit {
 
   ngOnInit(){
    this.filteredHotels = this.hotels;
-   this.hotelFilter = 'mot';
+   this.hotelFilter = '';
   }
 
   public toggleIsNewBadge(): void{

@@ -8,11 +8,13 @@ import localeFr from '@angular/common/locales/fr';
 
 import { AppCompement } from './app.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
+import { ReplaceComma } from './shared/pipes/replace-comma.pipe';
 
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
-  declarations: [ AppCompement , HotelListComponent],
+  // ici on declare les pages pour que angular reconnaitre 
+  declarations: [ AppCompement , HotelListComponent, ReplaceComma],
   imports: [
     BrowserModule, FormsModule
   ],

@@ -31,11 +31,11 @@ et pourtant le for of returne l'objet concernee -->
 
     <img [src]="hotel.imageUrl" [title]="hotel.hotelName |uppercase" class="card-img-top" [alt]="hotel.hotelName">
     <div class="card-body">
-      <h5 class="card-title">{{hotel.hotelName}}</h5>
+      <h5 class="card-title">{{hotel.hotelName | titlecase}}</h5>
       <p class="card-text">{{hotel.description}}</p>
 
       <p class="card-tex">
-        {{hotel.price | currency : 'EUR' : 'symbol' : '1.2-2' : 'fr'}}
+        {{hotel.price | currency : 'EUR' : 'symbol' : '1.2-2' : 'fr' | replaceComma}}
       </p>
 
       <span class="badge bg-pill bg-info" *ngIf="showBadge">Nouveau</span>
